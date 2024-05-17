@@ -1,0 +1,31 @@
+#Psuedo Code#
+1. User Registration:
+
+FUNCTION RegisterUser(username, password, firstname,lastname)
+  # Check for existing username
+  IF UsernameExists(username) THEN
+    RETURN "Username already exists"
+  ENDIF
+
+  # Validate username format
+  IF IsValidUsername(username) == FALSE THEN
+    RETURN "Invalid username format. Ensure username is no longer than 5 characters long and contains an underscore (_)"
+  ELSE
+    RETURN "Username successfully captured"
+  ENDIF
+
+  # Hash password for secure storage
+  hashed_password = HashPassword(password)
+
+  # Validate password format
+  IF IsValidUsername(username) == FALSE THEN
+    RETURN "Invalid username format. Ensure username is no longer than 5 characters long and contains an underscore (_)"
+  ELSE
+    RETURN "Username successfully captured"
+  ENDIF
+
+  # Store user data in secure storage (database)
+  StoreUserData(username, password, firstname,lastname)
+
+  RETURN "Registration successful"
+ENDFUNCTION
