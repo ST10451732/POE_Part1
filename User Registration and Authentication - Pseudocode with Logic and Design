@@ -1,0 +1,67 @@
+#Psuedo Code#
+1. User Registration:
+
+FUNCTION RegisterUser(username, password, firstname,lastname)
+  # Check for existing username
+  IF UsernameExists(username) THEN
+    RETURN "Username already exists"
+  ENDIF
+
+  # Validate username format
+  IF IsValidUsername(username) == FALSE THEN
+    RETURN "Invalid username format. Ensure username is no longer than 5 characters long and contains an underscore (_)"
+  ELSE
+    RETURN "Username successfully captured"
+  ENDIF
+
+  # Hash password for secure storage
+  hashed_password = HashPassword(password)
+
+  # Validate password format
+  IF IsValidPassword(password) == FALSE THEN
+    RETURN "Invalid password format. Ensure password contains at least 8 characters. a capital letter, a number and a a special character"
+  ELSE
+    RETURN "Password successfully captured"
+  ENDIF
+
+  # Store user data in secure storage (database)
+  StoreUserData(username, password, firstname,lastname)
+
+  RETURN "Registration successful"
+ENDFUNCTION
+
+Design Principles:
+
+Unique Username: Ensures no duplicate accounts exist.
+Email Validation (optional): Improves data integrity.
+Password Hashing: Stores passwords securely, preventing retrieval of plain text passwords.
+Secure Storage: Uses a database or other secure mechanism to store user data.
+2. User Authentication:
+
+FUNCTION AuthenticateUser(username, password)
+  # Retrieve user data from secure storage
+  user_data = GetUserByUsername(username)
+
+  # Check if username exists
+  IF user_data == NULL THEN
+    RETURN "Invalid username"
+  ENDIF
+
+  # Verify password using hash comparison
+  IF VerifyPassword(password, user_data.hashed_password) == FALSE THEN
+    RETURN "Invalid password"
+  ENDIF
+
+  # Authentication successful, return user data (optional)
+  RETURN user_data
+ENDFUNCTION
+Design Principles:
+
+Username Verification: Ensures the user exists before attempting password checks.
+Password Hash Comparison: Avoids storing plain text passwords and reduces security risks.
+Optional User Data Return: Useful for further processing after successful login.
+Additional Considerations:
+
+Error Handling: Implement proper error handling for invalid inputs or database access issues.
+Session Management: Consider using session tokens for maintaining logged-in state after successful authentication.
+Security Best Practices: Stay updated on best practices for secure password hashing and storage.
