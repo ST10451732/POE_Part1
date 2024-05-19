@@ -18,10 +18,10 @@ FUNCTION RegisterUser(username, password, firstname,lastname)
   hashed_password = HashPassword(password)
 
   # Validate password format
-  IF IsValidUsername(username) == FALSE THEN
-    RETURN "Invalid username format. Ensure username is no longer than 5 characters long and contains an underscore (_)"
+  IF IsValidPassword(password) == FALSE THEN
+    RETURN "Invalid password format. Ensure password contains at least 8 characters. a capital letter, a number and a a special character"
   ELSE
-    RETURN "Username successfully captured"
+    RETURN "Password successfully captured"
   ENDIF
 
   # Store user data in secure storage (database)
