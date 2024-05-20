@@ -1,12 +1,20 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class AccountTest {
 	
     private Account account; // Declare an Account instance
 
+    //------the perfect user account...
+    @BeforeEach
+    public void setUp() {
+        // Initialize the Account with valid credentials
+        account = new Account("kyl_1", "P@ssw0rd!23", "Kyle", "Smith");
+    }
+    
     public AccountTest() {
         // Initialize the Account with valid credentials
         account = new Account("kyl_1", "P@ssw0rd!23", "Kyle", "Smith");
@@ -72,27 +80,4 @@ class AccountTest {
         String validPassword = "Password"; // expected valid password
         assertTrue(account.loginUser(validUsername, validPassword));
     }
-	
-	
-	//@Test
-	//void testCheckPasswordComplexity() {
-	//	fail("Not yet implemented");
-	//}
-
-	//@Test
-	//void testRegisterUser() {
-	//	fail("Not yet implemented");
-	//}
-	
-	//@Test
-	//public void testRegisterUser_ValidRegistration() {
-	//	Account account = new Account("Tiny_","P@ssw0rd!23","Tiny","User");
-	//	Assertions.assertEquals("User registration sucessful.", account.registerUser("kyl_","P@ssword","Tiny", "User"));
-	//	Assertions.assertEquals("kyl_", account.getuserName());
-	//	Assertions.assertEquals("P@ssw0rd!23", account.getpassWord());
-	//	Assertions.assertEquals("Tiny", account.getfirstName());
-	//	Assertions.assertEquals("User", account.getlastName());
-		
-	//}
-
 }
