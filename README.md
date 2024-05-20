@@ -1,49 +1,91 @@
-1. Project Title and Description:
+Sure, here's an updated README file including the algorithm for the Task operations in the Main.java file:
+
+```markdown
 # POE_Part1
-# ST10451732@vcconnect.edu.za
-# User Dashboard Registration Application - Part 1
-# This project is a Java application for implementing user registration functionality, including input validation for username and password.
+## User Dashboard Registration Application - Part 1
 
-2. Table of Contents:
+This project is a Java application for implementing user registration functionality, including input validation for username and password, and task management.
 
+## Table of Contents
+1. [Project Title and Description](#project-title-and-description)
+2. [Table of Contents](#table-of-contents)
+3. [Installation Instructions](#installation-instructions)
+4. [Usage](#usage)
+5. [Features](#features)
+6. [Validation Rules](#validation-rules)
+7. [Task Management](#task-management)
+8. [Contributing](#contributing)
+9. [Testing](#testing)
+10. [License](#license)
+11. [Contact Info](#contact-info)
+12. [Acknowledgements](#acknowledgements)
+13. [Troubleshooting](#troubleshooting)
 
-3. Installation Instructions:
+## Project Title and Description
+**User Dashboard Registration Application - Part 1**
 
-4. usage:
+This project is a Java application for implementing user registration functionality, including input validation for username and password, and task management.
 
-5. Features:
-- User registration: Allows users to create an account by providing their username, password, first name, and last name.
-- Input validation: Validates the entered username and password based on specified conditions.
+## Installation Instructions
+To install this project, clone the repository and import it into your preferred Java IDE (e.g., Eclipse). Ensure you have JUnit for testing and Docker for containerization.
 
-6. Validation Rules
-Condition: Username contains an underscore and is no more that 5 characters long. 
--message True: "username successfully captrured"
--mesage false: "username is not correcly formatted, please ensure that your username contains an underscore and is no more that 5 characters in length"
+## Usage
+To run the application, execute the `Main` class. Follow the prompts to register, login, and manage tasks.
 
-User
-use github repo and kanban and eclipse and junit and docker to build a user dashboard registartion applaiction that meets these requirements:
+## Features
+- **User registration**: Allows users to create an account by providing their username, password, first name, and last name.
+- **Input validation**: Validates the entered username and password based on specified conditions.
+- **Task management**: Allows users to create and manage tasks after logging in.
 
-1. create an account entering username, passsword, firstname and lastname. 1.a, the system needs to check that the following conditions are met and reply with the appropriate output message
-Condition: Username contains an underscore and is no more that 5 characters long. 
--message True: "username successfully captrured"
--mesage false: "username is not correcly formatted, please ensure that your username contains an underscore and is no more that 5 characters in length"
+## Validation Rules
+### Username
+- **Condition**: Username contains an underscore and is no more than 5 characters long.
+  - **Message True**: "Username successfully captured."
+  - **Message False**: "Username is not correctly formatted. Please ensure that your username contains an underscore and is no more than 5 characters in length."
 
-condition: password meets the following complexity rules, the password must
-* atleast 8 characters long
-* contain a capoutal letter
-* contain a number
-* contain a special character
--message true: "Password successfully capturesd"
--message false: "Password is not correctly formaatted, please ensure that the password contains at least 8 characters, a capital letter a nuber and a special character"
+### Password
+- **Condition**: Password meets the following complexity rules:
+  - At least 8 characters long
+  - Contains a capital letter
+  - Contains a number
+  - Contains a special character
+  - **Message True**: "Password successfully captured."
+  - **Message False**: "Password is not correctly formatted. Please ensure that the password contains at least 8 characters, a capital letter, a number, and a special character."
 
-7. Contributing:
-8. Testing:
-9. License:
-10. Contact Info:
-* LinkedIn: https://www.linkedin.com/in/kholofelo-ledwaba/
-* email: ST10451732@vcconnect.edu.za
-* instagram: 
+## Task Management
+### Algorithm for Task Operations in Main.java
+1. Register to the application
+2. Login to the application
+3. While logged in:
+   - Ask the user if they want to create a task using number options
+   - If the user wants to create a task:
+     - Ask the user how many tasks they want to create
+     - Using the number of tasks, repeat:
+       - Create and capture a new task
+       - Ask the user if they want to continue, "yes" means loop until the specified number of tasks have been created
 
-11. Acknowledgements
-12. Troubleshooting 
- 
+## Contributing
+To contribute to this project, fork the repository, create a new branch, and submit a pull request.
+
+## Testing
+This project uses JUnit for testing. To run the tests, execute the test classes in your IDE.
+
+## License
+This project is licensed under the MIT License.
+
+## Contact Info
+* LinkedIn: [Kholofelo Ledwaba](https://www.linkedin.com/in/kholofelo-ledwaba/)
+* Email: [ST10451732@vcconnect.edu.za](mailto:ST10451732@vcconnect.edu.za)
+* Instagram: 
+
+## Acknowledgements
+Thanks to the course instructors and fellow students for their support.
+
+## Troubleshooting
+If you encounter any issues, please check the following:
+- Ensure all dependencies are correctly installed.
+- Refer to the logs for any error messages.
+- Consult the project documentation for detailed instructions.
+```
+
+This updated README includes the new task management algorithm and other essential information for users and contributors.
