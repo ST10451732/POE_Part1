@@ -1,20 +1,31 @@
+import java.util.ArrayList; //array reading bin
+import java.util.List; //list reading bin
+
 
 public class Account {
+	//--------Account backend funtions
+	
+	//Post all the inputs
 	private String userName;
 	private String passWord;
 	private String firstName;
 	private String lastName;
+	private List<Task> tasks;
 	
 	
 	//Constructor
 	public Account(String userName, String passWord, String firstName, String lastName) {
+		//Give posts an atribute and value
 		this.userName = userName;
 		this.passWord = passWord;
 		this.firstName = firstName;
 		this.lastName = lastName;	
+		
+		//ugh! the array
+		this.tasks = new ArrayList<>(); // Initialize the tasks list
 	}
 
-	//Getters and setters
+	//Getters and setters of posts into attribute values
 	//----Username
 	public String getuserName() {
 		return userName;
@@ -47,8 +58,9 @@ public class Account {
 		this.lastName = lastName;
 	}
 	
-	
-	//-----------Validations
+	//========================================
+	//-----------Validations------------------
+	//=========================================
 	//username: 5 characters and has underscore
 	public boolean checkUsername(String userName) {
 		return userName.length() >= 1 && userName.length() <= 5 && userName.contains("_");
@@ -86,5 +98,17 @@ public class Account {
 	//================Login
 	public boolean loginUser(String userName, String passWord) {
         return this.userName.equals(userName) && this.passWord.equals(passWord);
+    }
+	
+	//===============================================
+	//=============================Dashboard backend
+    // Add task
+    public void addTask(Task task) {
+        tasks.add(task);
+    }
+
+    // Get tasks
+    public List<Task> getTasks() {
+        return tasks;
     }
 }
